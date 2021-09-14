@@ -1,0 +1,5 @@
+{% if not INCLUDED_JSKATEXCSS %}
+    {% INCLUDECSS '@mpaw_jskatex/katex.min.css' %}
+    {% INCLUDECSS '@mpaw_jskatex/contrib/copy-tex.min.css' %}
+    {% DEFINE INCLUDED_JSKATEXCSS = true %}
+{% endif %}

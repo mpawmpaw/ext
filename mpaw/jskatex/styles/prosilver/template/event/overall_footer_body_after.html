@@ -1,0 +1,7 @@
+{% if not INCLUDED_JSKATEXJS %}
+    {% INCLUDEJS '@mpaw_jskatex/katex.min.js' %}
+    {% INCLUDEJS '@mpaw_jskatex/contrib/auto-render.min.js' %}
+    {% INCLUDEJS '@mpaw_jskatex/contrib/copy-tex.min.js' %}
+    {% INCLUDEJS '@mpaw_jskatex/render_on_load.js' %}
+    {% DEFINE INCLUDED_JSKATEXJS = true %}
+{% endif %}
