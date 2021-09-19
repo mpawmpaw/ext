@@ -25,7 +25,7 @@ class main_listener implements EventSubscriberInterface
 		return [
 			'core.user_setup'							=> 'load_language_on_setup',
 	        'core.display_forums_modify_template_vars'	=> 'display_forums_modify_template_vars',
-            'core.posting_modify_message_text'          => 'mod_bbcodes_for_jskatex'
+            'core.text_formatter_s9e_configure_after'   => 'configure_math_katex2'
 		];
 	}
 
@@ -70,8 +70,16 @@ class main_listener implements EventSubscriberInterface
 		$event['forum_row'] = $forum_row;
 	}
 	
-	public function mod_bbcodes_for_jskatex($event)
+	public function configure_math_katex2($event)
 	{
-	    $event['post_data']['post_text'] = "abc";
+	$event['configurator']->tags['MATH']->filterChain
+	    ->append([__CLASS__, 'configure_math_katex3']);
+	}
+
+	static public function configure_math_katex3(\s9e\TextFormatter\Parser\Tag $tag)
+	{
+		$tag->setAttribute('text', 'test_content');
+		return true;
 	}
 }
+?>
