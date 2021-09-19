@@ -1,1 +1,7 @@
-
+services:
+    mpaw.jskatex.listener:
+        class: mpaw\jskatex\event\main_listener
+        arguments:
+            - '@language'
+        tags:
+            - { name: event.listener }
