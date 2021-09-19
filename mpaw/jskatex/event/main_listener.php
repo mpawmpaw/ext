@@ -25,7 +25,7 @@ class main_listener implements EventSubscriberInterface
 		return [
 			'core.user_setup'							=> 'load_language_on_setup',
 	        'core.display_forums_modify_template_vars'	=> 'display_forums_modify_template_vars',
-	        'core.modify_submit_post_data'              => 'mod_bbcodes_for_jskatex'
+            'core.posting_modify_message_text'          => 'mod_bbcodes_for_jskatex'
 		];
 	}
 
@@ -72,6 +72,6 @@ class main_listener implements EventSubscriberInterface
 	
 	public function mod_bbcodes_for_jskatex($event)
 	{
-	    echo "<script>alert('OK');</script>";
+	    $event['post_data']['post_text'] = "abc";
 	}
 }
