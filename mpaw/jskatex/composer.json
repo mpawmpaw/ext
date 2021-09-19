@@ -4,7 +4,7 @@
     "description": "Apply KaTeX JS and CSS files to be used at forum",
     "homepage": "",
     "version": "1.0.0-dev",
-    "time": "2021-09-13",
+    "time": "2021-09-18",
     "license": "GPL-2.0-only",
     "authors": [
         {
